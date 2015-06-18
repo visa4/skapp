@@ -17,6 +17,11 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        $user = $this->model()->get('MatryoshkaTest\User\UserService')->create();
+        /* @var $user \MatryoshkaTest\User\UserEntity */
+        $user->setFirstName('test1');
+        $user->setLastName('test2');
+        $user->save();
         return new ViewModel();
     }
 }
